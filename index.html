@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUO Test Driller</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">FUO TEST DRILLER</div>
+        <p>100 Level Academic Practice Platform</p>
+    </header>
+
+    <main>
+
+        <!-- HOME PAGE -->
+        <section id="homePage" class="page">
+
+            <div class="hero">
+                <h1>Prepare. Practice. Improve.</h1>
+                <p>
+                    Practice your 100 Level courses topic by topic
+                    or test yourself under exam conditions.
+                </p>
+            </div>
+
+            <h2>Select a Course</h2>
+
+            <div class="course-container">
+
+                <div class="course-card" onclick="openCourse('MTH 101')">
+                    <div class="course-icon">∑</div>
+                    <h3>MTH 101</h3>
+                    <p>Mathematics</p>
+                </div>
+
+                <div class="course-card" onclick="openCourse('PHY 101')">
+                    <div class="course-icon">⚛</div>
+                    <h3>PHY 101</h3>
+                    <p>Physics</p>
+                </div>
+
+                <div class="course-card" onclick="openCourse('CHEM 101')">
+                    <div class="course-icon">⚗</div>
+                    <h3>CHEM 101</h3>
+                    <p>Chemistry</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- COURSE PAGE -->
+        <section id="coursePage" class="page hidden">
+
+            <button class="back-button" onclick="goHome()">← Back</button>
+
+            <h1 id="courseTitle">MTH 101</h1>
+            <p>Select how you want to practice.</p>
+
+            <div class="practice-container">
+
+                <div class="practice-card" onclick="startGeneralPractice()">
+                    <h2>General Practice</h2>
+                    <p>
+                        Answer questions from different topics
+                        in this course.
+                    </p>
+                    <button>Start Practice</button>
+                </div>
+
+                <div class="practice-card" onclick="startExam()">
+                    <h2>Exam Mode</h2>
+                    <p>
+                        Simulate an examination with a timer
+                        and final score.
+                    </p>
+                    <button>Start Exam</button>
+                </div>
+
+            </div>
+
+            <h2>Topics</h2>
+
+            <div id="topicsContainer" class="topics-container"></div>
+
+        </section>
+
+
+        <!-- QUIZ PAGE -->
+        <section id="quizPage" class="page hidden">
+
+            <div class="quiz-header">
+
+                <button class="back-button" onclick="confirmExit()">
+                    ← Exit
+                </button>
+
+                <div>
+                    <span id="quizCourse">MTH 101</span>
+                    <span id="quizMode">Practice</span>
+                </div>
+
+                <div id="timer">10:00</div>
+
+            </div>
+
+            <div class="progress-area">
+
+                <div class="progress-text">
+                    Question <span id="questionNumber">1</span>
+                    of <span id="totalQuestions">10</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div id="progress"></div>
+                </div>
+
+            </div>
+
+            <div class="question-card">
+
+                <h2 id="questionText">
+                    Question goes here
+                </h2>
+
+                <div id="optionsContainer"></div>
+
+                <button id="nextButton" onclick="nextQuestion()">
+                    Next Question
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULT PAGE -->
+        <section id="resultPage" class="page hidden">
+
+            <div class="result-card">
+
+                <h1>Test Completed</h1>
+
+                <div class="score-circle">
+                    <span id="scorePercentage">0%</span>
+                </div>
+
+                <h2 id="scoreText">0 / 10</h2>
+
+                <p id="resultMessage"></p>
+
+                <div class="result-details">
+
+                    <div>
+                        <strong id="correctAnswers">0</strong>
+                        <span>Correct</span>
+                    </div>
+
+                    <div>
+                        <strong id="wrongAnswers">0</strong>
+                        <span>Wrong</span>
+                    </div>
+
+                </div>
+
+                <button onclick="reviewAnswers()">
+                    Review Answers
+                </button>
+
+                <button onclick="goHome()">
+                    Back Home
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- REVIEW PAGE -->
+        <section id="reviewPage" class="page hidden">
+
+            <button class="back-button" onclick="goHome()">
+                ← Home
+            </button>
+
+            <h1>Answer Review</h1>
+
+            <div id="reviewContainer"></div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>FUO Test Driller © 2026</p>
+        <p>Built for academic practice</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
